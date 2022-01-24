@@ -1,0 +1,18 @@
+id: smtp-service-detection
+
+info:
+  name: SMTP Service Detection
+  author: pussycat0x
+  severity: info
+ 
+
+network:
+  - inputs:
+      - data: "\r\n"
+    host:
+      - "{{Hostname}}"
+      - "{{Host}}:25"
+    matchers:
+      - type: word
+        words:
+          - "SMTP"
